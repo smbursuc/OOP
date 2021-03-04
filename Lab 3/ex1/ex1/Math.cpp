@@ -43,7 +43,7 @@ int Math::Mul(double x, double y, double z)
 	return x * y * z;
 }
 
-int Add(int count, ...)
+int Math::Add(int count, ...)
 {
 	va_list ap;
 	va_start(ap, count);
@@ -56,7 +56,7 @@ int Add(int count, ...)
 	return sum;
 }
 
-char* Add(const char* x, const char* y)
+char* Math::Add(const char* x, const char* y)
 {
 	char* ptr;
 	if (x == nullptr || y == nullptr)
