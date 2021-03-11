@@ -22,6 +22,17 @@ int main()
 	cout<<test4.GetElementFromIndex(5)<<endl;
 	test4.Print();
 
+	Sort test5 = Sort(4, 4, 3, 2, 1);
+	test5.quickSort();
+	Sort test6 = Sort(6, 3, 566, 0, 3, 2, 18);
+	test6.quickSort();
+	test5.Print();
+	test6.Print();
+
+	test5.Merge(test6);
+	test5.Print();
+	
+
 	//Sort test5(90);
 	//test5.GetElementsCount();
 

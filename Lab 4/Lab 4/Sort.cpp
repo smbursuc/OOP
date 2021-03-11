@@ -28,6 +28,7 @@ int Sort::GetElementsCount()
 	return number;
 }
 
+
 Sort::Sort(int n_args, ...)
 {
 	va_list ap;
@@ -123,4 +124,34 @@ void Sort::Print()
 	for (int i = 0; i < number; i++)
 		cout << numbers[i] << " ";
 	cout << endl;
+}
+
+int* Sort::getVector()
+{
+	return numbers;
+}
+
+void Sort::Merge(Sort s)
+{
+	int i = 0, j = 0, p = 0;
+	int c[200];
+	int* a = s.getVector();
+
+	while (i < this->number && j < s.GetElementsCount())
+		if (numbers[i] < a[j])
+			c[p++] = numbers[i++];
+		else
+			c[p++] = a[j++];
+	while (i < this->number)
+		c[p++] = numbers[i++];
+	while (j < s.GetElementsCount())
+		c[p++] = a[j++];
+
+	for (int i = 0; i < number; i++)
+		numbers[i] = 0;
+
+	for (int i = 0; i < p; i++)
+		numbers[i] = c[i];
+	number = p;
+	
 }
