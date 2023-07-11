@@ -1,1 +1,3 @@
-# BursucSerbanMihaiE3
+# OOP
+
+Assignments for the course OOP.
